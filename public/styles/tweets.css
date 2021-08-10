@@ -5,6 +5,11 @@
   width: 90%;
   margin: 0px 5% 0.5em 5%;
 }
+
+.article-tweet:hover {
+  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
+}
+
 .article-tweet div {
   font-family: Bungee, sans-serif;
   font-size: small;
@@ -35,3 +40,14 @@ footer {
   background-color: azure;
   margin: 0 auto;
 }
+
+#icons {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.i1:hover , .i2:hover, .i3:hover{
+  color: yellow;
+}
+
