@@ -4,7 +4,7 @@ nav {
   width: 100vw;
   background-color: #4056A1;
   color: #ffff;
-  
+  z-index:1;
   padding: 0px 1.5em;
   display: flex;
   justify-content: space-between;
