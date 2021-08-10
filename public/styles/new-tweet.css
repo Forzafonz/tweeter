@@ -1,0 +1,47 @@
+.tweet-container{
+  background-color: #4147a1;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tweet-button{
+  background-color:#062280;
+  font-family: Bungee, sans-serif;
+  color: whitesmoke;
+  margin: 5px 0px;
+}
+
+.tweet-button:hover{
+  background-color:#2e4fbd;
+  font-family: Bungee, sans-serif;
+}
+
+#tweet-text {
+  border-bottom: 4px solid rgb(235, 187, 100);
+  background-color: #9ba0eb;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  align-self: center;
+  resize: none;
+  width: 90%;
+  max-width: 100%;
+  margin: 8px 0px;
+}
+
+#tweet-form {
+  width: 100%;
+  
+}
+
+.control {
+  margin:auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#text {
+  font-family: Bungee, sans-serif;
+  color: azure;
+}
