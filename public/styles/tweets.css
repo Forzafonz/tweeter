@@ -1,4 +1,37 @@
-#article.tweet {
+.article-tweet {
   display: flex;
-  border:4px solid whitesmoke ;
+  flex-direction: column;
+  border: 4px solid whitesmoke;
+  width: 90%;
+  margin: 0px 5% 0.5em 5%;
+}
+.article-tweet div {
+  font-family: Bungee, sans-serif;
+  font-size: small;
+  color: whitesmoke;
+  width: auto;
+  text-align: left;
+  margin: 1.5em;
+}
+
+article header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#handle {
+  color: silver
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider2 {
+  width: 99%;
+  height: 0.05em;
+  background-color: azure;
+  margin: 0 auto;
 }

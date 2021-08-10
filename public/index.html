@@ -35,7 +35,10 @@
     <!-- Top nav bar (fixed) -->
 
     <nav>
+      <div class = "nav-wrap"> 
       <span class = "logo">tweeter<br><span id = "sub-logo">To Yell at People</span></span>
+      <div class = "image"><img id = "main-logo" src = "/images/tweeter.png"></div>
+      </div>
       <div class = "new-tweet">
         <span><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down arrow"></i>
@@ -72,10 +75,21 @@
               <output name="counter" class="counter" for="tweet-text" id ="text">140</output>
             </div>
 
-            <article class = "article.tweet">
-              <header >This is header</header>
-              Ipsum dolore
-              <footer>This is footer</footer>
+            <article class = "article-tweet">
+              <header>
+                <div>Profile Pic</div>
+                <div id = 'handle'>Twitter Handle</div>
+              </header>
+                <div>There will be a text of tweet after everything is done</div>
+              <hr class = "divider2">
+              <footer>
+                <div>Time of tweet</div>
+                <div> 
+                  <i class="fas fa-flag"></i>
+                  <i class="fas fa-retweet"></i>
+                  <i class="fab fa-gratipay"></i>
+                </div>
+              </footer>
             </article>
 
 
