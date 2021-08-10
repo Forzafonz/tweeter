@@ -42,7 +42,7 @@
     </nav>
 
   
-  <header>
+  <header id = "main">
       <div class = "container header-tweeter">
         <div>
             <img src="/images/profile-hex.png"> 
@@ -62,6 +62,7 @@
 
       <section class="new-tweet">
         <div class = "tweet-container">
+
           <form method = "POST" action = "/tweets" id = 'tweet-form'>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
             <hr class = "divider">
@@ -69,6 +70,14 @@
               <button type="submit" class = "tweet-button">Tweet</button>
               <output name="counter" class="counter" for="tweet-text" id ="text">140</output>
             </div>
+
+            <article class = "article.tweet">
+              <header >This is header</header>
+              Ipsum dolore
+              <footer>This is footer</footer>
+            </article>
+
+
           </form>
         </div>
       </section>
