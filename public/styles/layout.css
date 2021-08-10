@@ -27,8 +27,15 @@ main {
   background-color: #402300;
   background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
   width: 90%;
-  display: flex;
-  justify-items: center;
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0% 5%;
+}
+
+p {
+  color: white;
 }
 
 /*

@@ -2,7 +2,9 @@ nav {
   height: 120px;
   width: 100%; 
   width: 100vw;
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
+  background-color: #062280;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #ffff;
   z-index:1;
   padding: 0px 1.5em;
