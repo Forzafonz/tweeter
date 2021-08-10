@@ -1,0 +1,4 @@
+#article.tweet {
+  display: flex;
+  border:4px solid whitesmoke ;
+}
