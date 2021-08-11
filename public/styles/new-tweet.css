@@ -56,6 +56,41 @@
   background-color: azure;
   margin: 0 auto;
 }
+.error {
+  margin: -0.2em auto auto auto;
+  display: none;
+}
+
+#error-message {
+  width: 90%;
+  height: auto;
+  background-color: pink;
+  margin: 0px 5% 0.2em 5%;
+  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
+  border-color:  pink;
+  display: flex;
+  flex-direction: row;
+}
+.arrow-box {
+  width: 90%; 
+  margin: auto 5%
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid  pink;
+  margin: auto,;
+}
+
+#error-text {
+  margin: auto auto auto 2em;
+  font-style: oblique;
+  color: Red;
+  font-weight: bold;
+}
 
 ::placeholder { 
   color: white;
