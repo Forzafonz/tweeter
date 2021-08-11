@@ -1,8 +1,10 @@
 nav {
+  position: fixed;
+  top:0;
+  left:0;
   height: 120px;
   width: 100%; 
   width: 100vw;
-  /* background-color: #4056A1; */
   background-color: #062280;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #ffff;
@@ -42,6 +44,7 @@ nav {
 
 #main-logo {
   max-width: 30%;
+  min-width: 20%;
   height: auto;
   margin: 1em 1em 2em 0;
 }

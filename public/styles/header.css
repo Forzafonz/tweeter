@@ -1,5 +1,6 @@
 
 .container {
+  position: relative;
   height: 400px;
   width: 100%;
   display: flex;
@@ -9,7 +10,7 @@
 }
 
 #main{
-  /* background-color: rgb(105, 186, 253); */
+  margin-top: 125px;
   background-color: #402300;
   background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
 
