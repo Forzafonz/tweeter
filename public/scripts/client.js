@@ -3,29 +3,36 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-const timeago = require('timeago.js');
-
-const tweetData = {
+const tweetData = [{
   "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
+    "handle": "@SirIsaac"
+  },
   "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
-
+    "text": "If I have seen further it is by standing on the shoulders of giants"
+  },
+  "created_at": 1628536857731
+},
+{
+  "user": {
+    "name": "Descartes",
+    "avatars": "https://i.imgur.com/nlhLi3I.png",
+    "handle": "@rd"
+  },
+  "content": {
+    "text": "Je pense , donc je suis"
+  },
+  "created_at": 1628623257731
+}]
 
 // A function to dynamically create HTML/CSS markup to display tweets
 const createTweetElement = function(input) {
-
-  const tweetBody = `
+ 
+  const $tweetBody = `
                     <article class = "article-tweet">
                         <header>
-                          <div>${input.user.avatars}</div>
+                          <img src = "${input.user.avatars}" />
                           <div id = 'handle'>${input.user.handle}</div>
                         </header>
                           <div>${input.content.text}</div>
@@ -39,11 +46,23 @@ const createTweetElement = function(input) {
                           </div>
                          </footer>
                       </article>`
-  return tweetBody;
+  return $tweetBody;
+
 }
 
+const renderTweets = function(tweetData) {
 
-const $tweet = createTweetElement(tweetData);
+  // loops through tweets
+  for (const tweet of tweetData) {
+  // calls createTweetElement for each tweet
+    const newTweet = createTweetElement(tweet)
+  // takes return value and appends it to the tweets container
+    $(".tweet-container").append(newTweet);
+  }
+}
 
-// Test / driver code (temporary)
-console.log($tweet); 
+$(document).ready(function() {
+
+  renderTweets(tweetData);
+
+});
