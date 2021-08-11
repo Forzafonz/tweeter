@@ -4,7 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// A function to dynamically create HTML/CSS markup to display tweets
+//A function to check if tweet meets conditions
+
+const checkTweet = function(tweet) {
+
+  if (tweet.length === 0) {
+    alert("Tweet cannot be empty");
+    return false;
+  } if (tweet.length > 140) {
+    alert("Tweet cannot be longer than 140 characters");
+    return false;
+  }
+  return true;
+}
+
+// A function to load all existing tweets from the database
 const loadTweets = function(){
 
   $.get('/tweets').then((tweets) => renderTweets(tweets));
@@ -13,7 +27,7 @@ const loadTweets = function(){
 const createTweetElement = function(input) {
 
   
- 
+// A function to dynamically create HTML/CSS markup to display tweets
   const $tweetBody = `
                     <article class = "article-tweet">
                         <header>
@@ -56,11 +70,15 @@ $(document).ready(function() {
 // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $( this ).serialize()
-    });
+    const tweetText = $( this ).children("textarea").val();
+    if (checkTweet(tweetText)) {
+
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $( this ).serialize()
+      });
+    };
   })
 
 });
