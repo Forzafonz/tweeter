@@ -4,6 +4,7 @@
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 
