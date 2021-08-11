@@ -13,4 +13,14 @@ $(document).ready(function() {
         counter.css('color', 'white');
       }
     });
+
+  $("#tweet-form").submit(function (event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $( this ).serialize()
+    });
+  })
+
 });
