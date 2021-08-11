@@ -1,20 +1,20 @@
 .tweet-container{
-  background-color: #4147a1;
-  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  background-color: #062280;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
 .tweet-button{
-  background-color:#062280;
+  background-color: orange;
   font-family: Bungee, sans-serif;
   color: whitesmoke;
   margin: 10px 0px;
 }
 
 .tweet-button:hover{
-  background-color:#2e4fbd;
+  background-color:rgb(233, 194, 122);
   font-family: Bungee, sans-serif;
 }
 
