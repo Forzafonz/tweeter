@@ -14,13 +14,4 @@ $(document).ready(function() {
       }
     });
 
-  $("#tweet-form").submit(function (event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $( this ).serialize()
-    });
-  })
-
 });
