@@ -3,28 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const tweetData = [{
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1628536857731
-},
-{
-  "user": {
-    "name": "Descartes",
-    "avatars": "https://i.imgur.com/nlhLi3I.png",
-    "handle": "@rd"
-  },
-  "content": {
-    "text": "Je pense , donc je suis"
-  },
-  "created_at": 1628623257731
-}]
 
 // A function to dynamically create HTML/CSS markup to display tweets
 const createTweetElement = function(input) {
@@ -65,4 +43,19 @@ $(document).ready(function() {
 
   renderTweets(tweetData);
 
+// "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
+  $("#tweet-form").submit(function (event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $( this ).serialize()
+    });
+  })
+
+  const loadTweets = function() {
+    $.get('/tweets').then((response) => console.log(response));
+  }
+
+  loadTweets();
 });
