@@ -5,12 +5,22 @@
  */
 
 // A function to dynamically create HTML/CSS markup to display tweets
+const loadTweets = function(){
+
+  $.get('/tweets').then((tweets) => renderTweets(tweets));
+}
+
 const createTweetElement = function(input) {
+
+  
  
   const $tweetBody = `
                     <article class = "article-tweet">
                         <header>
+                          <div>
                           <img src = "${input.user.avatars}" />
+                          <span id = 'user-name'>${input.user.name}<span>
+                          </div>
                           <div id = 'handle'>${input.user.handle}</div>
                         </header>
                           <div>${input.content.text}</div>
@@ -41,7 +51,7 @@ const renderTweets = function(tweetData) {
 
 $(document).ready(function() {
 
-  renderTweets(tweetData);
+  loadTweets();
 
 // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
   $("#tweet-form").submit(function (event) {
@@ -53,9 +63,4 @@ $(document).ready(function() {
     });
   })
 
-  const loadTweets = function() {
-    $.get('/tweets').then((response) => console.log(response));
-  }
-
-  loadTweets();
 });
