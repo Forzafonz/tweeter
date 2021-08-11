@@ -20,7 +20,7 @@ const checkTweet = function(tweet) {
 
 // A function to load all existing tweets from the database
 const loadTweets = function(){
-
+  $(".article-tweet").remove();
   $.get('/tweets').then((tweets) => renderTweets(tweets));
 }
 
@@ -69,15 +69,12 @@ $(document).ready(function() {
 
 // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
   $("#tweet-form").submit(function (event) {
+    console.log("I am triggered!")
     event.preventDefault();
     const tweetText = $( this ).children("textarea").val();
     if (checkTweet(tweetText)) {
-
-      $.ajax({
-        type: "POST",
-        url: "/tweets",
-        data: $( this ).serialize()
-      });
+      $.post("/tweets", $( this ).serialize())
+      .then((res) => loadTweets());
     };
   })
 
