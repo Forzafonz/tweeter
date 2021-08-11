@@ -18,6 +18,14 @@ const checkTweet = function(tweet) {
   return true;
 }
 
+//A function to make sure that no Cross Site Scripting (XSS) is allowed in tweets
+
+const convertToNonXSS = function (tweet) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(tweet));
+  return div.innerHTML;
+}
+
 // A function to load all existing tweets from the database
 const loadTweets = function(){
   $(".article-tweet").remove();
@@ -32,12 +40,12 @@ const createTweetElement = function(input) {
                     <article class = "article-tweet">
                         <header>
                           <div>
-                          <img src = "${input.user.avatars}" />
-                          <span id = 'user-name'>${input.user.name}<span>
+                          <img src = "${convertToNonXSS(input.user.avatars)}" />
+                          <span id = 'user-name'>${convertToNonXSS(input.user.name)}<span>
                           </div>
-                          <div id = 'handle'>${input.user.handle}</div>
+                          <div id = 'handle'>${convertToNonXSS(input.user.handle)}</div>
                         </header>
-                          <div>${input.content.text}</div>
+                          <div>${convertToNonXSS(input.content.text)}</div>
                             <hr class = "divider2">
                         <footer>
                           <div>${timeago.format(input.created_at)}</div>
@@ -69,7 +77,6 @@ $(document).ready(function() {
 
 // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
   $("#tweet-form").submit(function (event) {
-    console.log("I am triggered!")
     event.preventDefault();
     const tweetText = $( this ).children("textarea").val();
     if (checkTweet(tweetText)) {
