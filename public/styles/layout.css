@@ -34,9 +34,17 @@ main {
   margin: 0% 5%;
 }
 
+#main-name {
+  background-color: rgb(228, 208, 178, 0.3);
+  border-radius: 5%;
+  color: whitesmoke;
+  padding:0.2em 3em;
+}
+
 p {
   color: white;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
