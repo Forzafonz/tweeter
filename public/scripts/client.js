@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const timeago = require('timeago.js');
+
 const tweetData = {
   "user": {
     "name": "Newton",
@@ -29,15 +31,14 @@ const createTweetElement = function(input) {
                           <div>${input.content.text}</div>
                             <hr class = "divider2">
                         <footer>
-                          <div>${user.created_at}</div>
+                          <div>${timeago.format(input.created_at)}</div>
                           <div id = 'icons'> 
                           <i class="fas fa-flag i1 fa-2x"></i>
                           <i class="fas fa-retweet i2 fa-2x"></i>
                           <i class="fab fa-gratipay i3 fa-2x"></i>
                           </div>
                          </footer>
-                      </article>
-  `
+                      </article>`
   return tweetBody;
 }
 
