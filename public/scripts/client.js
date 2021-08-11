@@ -7,15 +7,29 @@
 //A function to check if tweet meets conditions
 
 const checkTweet = function(tweet) {
-
+  let errorMsg = "";
   if (tweet.length === 0) {
-    alert("Tweet cannot be empty");
-    return false;
-  } if (tweet.length > 140) {
-    alert("Tweet cannot be longer than 140 characters");
+    errorMsg = "Tweet cannot be empty. Plese type something and try again";
+  } else if (tweet.length > 140) {
+    errorMsg = "Tweet cannot be longer than 140 characters";
+  }
+  if (errorMsg !== "") {
+    throwError(errorMsg);
     return false;
   }
   return true;
+}
+
+//A Function which will display error:
+
+const throwError = function(errorMsg) {
+    $("#error-text").text(errorMsg);
+    $("#tweet-text").css('border', '2px solid red');
+    $(".error").slideDown({complete: () => {
+      $("#tweet-text").on('click', () => {
+      $("#tweet-text").css('border', '');
+      $(".error").css('display', 'none');});
+    }});
 }
 
 //A function to make sure that no Cross Site Scripting (XSS) is allowed in tweets
