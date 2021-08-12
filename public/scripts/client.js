@@ -18,40 +18,41 @@ const checkTweet = function(tweet) {
     return false;
   }
   return true;
-}
+};
 
 //A Function which will display error:
 
 const throwError = function(errorMsg) {
-    $("#error-text").text(errorMsg);
-    $("#tweet-text").css('border', '2px solid red');
-    $(".error").slideDown({complete: () => {
-      //Event listener which will hide error if user clicked on textarea
-      $("#tweet-text").on('click', () => {
+  $("#error-text").text(errorMsg);
+  $("#tweet-text").css('border', '2px solid red');
+  $(".error").slideDown({complete: () => {
+    //Event listener which will hide error if user clicked on textarea
+    $("#tweet-text").on('click', () => {
       $("#tweet-text").css('border', '');
-      $(".error").css('display', 'none');});
+      $(".error").css('display', 'none');
+    });
 
-    }});
-}
+  }});
+};
 
 //A function to make sure that no Cross Site Scripting (XSS) is allowed in tweets
 
-const convertToNonXSS = function (tweet) {
+const convertToNonXSS = function(tweet) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(tweet));
   return div.innerHTML;
-}
+};
 
 // A function to load all existing tweets from the database
-const loadTweets = function(){
+const loadTweets = function() {
   $(".article-tweet").remove();
   $.get('/tweets').then((tweets) => renderTweets(tweets));
-}
+};
 
 const createTweetElement = function(input) {
 
   
-// A function to dynamically create HTML/CSS markup to display tweets
+  // A function to dynamically create HTML/CSS markup to display tweets
   const $tweetBody = `
                     <article class = "article-tweet">
                         <header>
@@ -71,21 +72,21 @@ const createTweetElement = function(input) {
                           <i class="fab fa-gratipay i3 fa-2x"></i>
                           </div>
                          </footer>
-                      </article>`
+                      </article>`;
   return $tweetBody;
 
-}
+};
 
 const renderTweets = function(tweetData) {
 
   // loops through tweets
   for (const tweet of tweetData) {
   // calls createTweetElement for each tweet
-    const newTweet = createTweetElement(tweet)
-  // takes return value and appends it to the tweets container
+    const newTweet = createTweetElement(tweet);
+    // takes return value and appends it to the tweets container
     $(".tweet-container").append(newTweet);
   }
-}
+};
 
 
 
@@ -93,19 +94,19 @@ $(document).ready(function() {
 
   loadTweets();
 
-// "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax" 
-  $("#tweet-form").submit(function (event) {
+  // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax"
+  $("#tweet-form").submit(function(event) {
     event.preventDefault();
-    const tweetText = $( this ).children("textarea").val();
+    const tweetText = $(this).children("textarea").val();
     if (checkTweet(tweetText)) {
-      $.post("/tweets", $( this ).serialize())
-      .then((res) => loadTweets());
-    };
-  })
+      $.post("/tweets", $(this).serialize())
+        .then((res) => loadTweets());
+    }
+  });
 
   $(".arrow").on("click", () => {
     $("#tweet-text").focus();
-  })
+  });
 
   const isInViewport = function() {
     const elementTop = $("#tweet-text").offset().top;
@@ -113,7 +114,7 @@ $(document).ready(function() {
     const viewportTop = $(window).scrollTop() + $("#tweet-text").outerHeight();
     const viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop && elementTop < viewportBottom;
-  }
+  };
 
   $(window).on('scroll', () => {
     console.log(!isInViewport());
@@ -122,10 +123,10 @@ $(document).ready(function() {
     } else {
       $("#scroll-to-top").css('display', 'none');
     }
-  })
+  });
 
   $("#scroll-to-top").on('click', () => {
     $("#tweet-text").focus();
-  })
+  });
   
 });
