@@ -34,7 +34,9 @@
   padding: 0 0 5px 0;
   color: white;
   font-family: Bungee, sans-serif;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 1em;
+  outline: none;
 }
 
 #tweet-text:hover {
