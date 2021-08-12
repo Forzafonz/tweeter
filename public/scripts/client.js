@@ -120,7 +120,7 @@ $(document).ready(function() {
           width: "linear",
           height: "easeOutBounce"
         }}, 'slow');
-        $("#tweet-text").focus();
+        $("#tweet-text").focus(focusHandler());
       } else {
         $("#tweet-form").slideUp("slow");
       }
@@ -150,7 +150,19 @@ $(document).ready(function() {
         width: "linear",
         height: "easeOutBounce"
       }}, 'slow');
-    $("#tweet-text").focus();
+    $("#tweet-text").focus(focusHandler());
   });
+
+  //Handler for #tweet-text focus:
+
+  const focusHandler = function () {
+    $("#tweet-text").focus();
+    $("#tweet-text").css('caret-color','white')
+  }
+
+  $("#tweet-text").on('click', ()=> {
+   $("#tweet-text").attr('placeholder', '');
+   focusHandler();
+  })
   
 });

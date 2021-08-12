@@ -34,6 +34,11 @@
   padding: 0 0 5px 0;
   color: white;
   font-family: Bungee, sans-serif;
+  padding: 5px;
+}
+
+#tweet-text:hover {
+  box-shadow: 0px 0px 20px 20px rgb(255, 253, 253, 0.15), 0 0 6px 6px rgba(252, 252, 252, 0.35);
 }
 
 #tweet-form {
