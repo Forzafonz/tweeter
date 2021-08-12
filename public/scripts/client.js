@@ -110,7 +110,7 @@ $(document).ready(function() {
   const isInViewport = function() {
     const elementTop = $("#tweet-text").offset().top;
     const elementBottom = elementTop + $("#tweet-text").outerHeight();
-    const viewportTop = $(window).scrollTop() +$("nav").outerHeight() + $("#tweet-text").outerHeight();
+    const viewportTop = $(window).scrollTop() + $("#tweet-text").outerHeight();
     const viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop && elementTop < viewportBottom;
   }
