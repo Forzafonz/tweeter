@@ -45,6 +45,34 @@ p {
   color: white;
 }
 
+#scroll-to-top {
+  background-color:orange;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  height: 60px;
+  width: 60px;
+  margin: 0 2% auto 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#scroll-to-top:hover {
+  background-color: red;
+}
+
+.arrow2 {
+  transform: rotate(180);
+}
+
+#foot1 {
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
