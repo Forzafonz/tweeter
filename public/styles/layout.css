@@ -46,22 +46,27 @@ p {
 }
 
 #scroll-to-top {
+  position: fixed;
+  bottom:5em;
+  right:1em;
   background-color:orange;
   border: none;
   border-radius: 50%;
   color: white;
   cursor: pointer;
   font-size: 16px;
-  height: 60px;
-  width: 60px;
+  height: 5em;
+  width: 5em;
   margin: 0 2% auto 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 0px 20px 3px rgb(255, 253, 253, 0.15), 0 0px 6px 3px rgba(252, 252, 252, 0.35);
   display: none;
 }
 #scroll-to-top:hover {
   background-color: red;
+  box-shadow: 0px 0px 20px 5px rgb(255, 253, 253, 0.15), 0 0px 6px 5px rgba(252, 252, 252, 0.35);
 }
 
 .arrow2 {

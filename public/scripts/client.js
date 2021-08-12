@@ -107,4 +107,24 @@ $(document).ready(function() {
     $("#tweet-text").focus();
   })
 
+  const isInViewport = function() {
+    const elementTop = $("#tweet-text").offset().top;
+    const elementBottom = elementTop + $("#tweet-text").outerHeight();
+    const viewportTop = $(window).scrollTop() +$("nav").outerHeight() + $("#tweet-text").outerHeight();
+    const viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  }
+
+  $(window).on('scroll', () => {
+    console.log(!isInViewport());
+    if (!isInViewport()) {
+      $("#scroll-to-top").css('display', 'flex');
+    } else {
+      $("#scroll-to-top").css('display', 'none');
+    }
+
+  })
+
+  // isInViewport();
+  
 });
