@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 100%;
   word-wrap: break-word;
+  padding: 1em 0 0 0;
 }
 
 .tweet-button{
@@ -35,6 +36,7 @@
 
 #tweet-form {
   width: 100%;
+  display:none;
 }
 
 .control {
