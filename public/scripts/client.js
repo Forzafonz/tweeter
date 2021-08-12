@@ -29,7 +29,7 @@ const throwError = function(errorMsg) {
     //Event listener which will hide error if user clicked on textarea
     $("#tweet-text").on('click', () => {
       $("#tweet-text").css('border', '');
-      $(".error").css('display', 'none');
+      $(".error").slideUp("slow");
     });
 
   }});
