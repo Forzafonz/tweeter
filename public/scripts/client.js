@@ -122,9 +122,10 @@ $(document).ready(function() {
     } else {
       $("#scroll-to-top").css('display', 'none');
     }
-
   })
 
-  // isInViewport();
+  $("#scroll-to-top").on('click', () => {
+    $("#tweet-text").focus();
+  })
   
 });
