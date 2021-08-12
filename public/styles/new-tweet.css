@@ -7,6 +7,8 @@
   width: 100%;
   word-wrap: break-word;
   padding: 1em 0 0 0;
+  border-radius: 0.3em;
+  box-shadow: 0 0 5px 10px rgb(65,36,0, 0.6),  0 0 15px 25px rgb(65,36,0, 0.25);
 }
 
 .tweet-button{
@@ -22,7 +24,7 @@
 }
 
 #tweet-text {
-  background-color: #9ba0eb;
+  background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
   align-self: center;
   resize: none;
