@@ -7,11 +7,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  background-color: transparent;
 }
 
 #main{
-  
-  background-color: #402300;
-  background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
   margin: 9em 1em;
 }
