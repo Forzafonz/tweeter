@@ -108,16 +108,22 @@ $(document).ready(function() {
     };
   });
 
-  // An event listener which catches a clieck on write a new tweet arrow and navigates user to write twitter forms
+  // An event listener which catches a click on write a new tweet arrow and navigates user to write twitter forms
   $(".arrow").on("click", () => {
-    $("#tweet-form").css('display', 'block');
-    $("html, body").animate({
-      scrollTop: $("#tweet-form").offset().top,
-      specialEasing: {
-        width: "linear",
-        height: "easeOutBounce"
-      }}, 'slow');
-    $("#tweet-text").focus();
+
+    if ($("#tweet-form").css('display') === 'none') {
+
+      $("#tweet-form").slideDown("slow");
+      $("html, body").animate({
+        scrollTop: $("#tweet-form").offset().top,
+        specialEasing: {
+          width: "linear",
+          height: "easeOutBounce"
+        }}, 'slow');
+        $("#tweet-text").focus();
+      } else {
+        $("#tweet-form").slideUp("slow");
+      }
   });
 
   const isInViewport = function() {
