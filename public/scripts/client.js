@@ -9,9 +9,9 @@
 const checkTweet = function(tweet) {
   let errorMsg = "";
   if (tweet.length === 0) {
-    errorMsg = "Tweet cannot be empty. Plese type something and try again";
+    errorMsg = "Tweet cannot be empty. Plese type something and try again!!!";
   } else if (tweet.length > 140) {
-    errorMsg = "Tweet cannot be longer than 140 characters";
+    errorMsg = "Tweet cannot be longer than 140 characters!!!";
   }
   if (errorMsg !== "") {
     throwError(errorMsg);
@@ -26,9 +26,11 @@ const throwError = function(errorMsg) {
     $("#error-text").text(errorMsg);
     $("#tweet-text").css('border', '2px solid red');
     $(".error").slideDown({complete: () => {
+      //Event listener which will hide error if user clicked on textarea
       $("#tweet-text").on('click', () => {
       $("#tweet-text").css('border', '');
       $(".error").css('display', 'none');});
+
     }});
 }
 

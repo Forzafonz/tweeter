@@ -64,12 +64,13 @@
 #error-message {
   width: 90%;
   height: auto;
-  background-color: pink;
+  background-color: white;
   margin: 0px 5% 0.2em 5%;
   box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
-  border-color:  pink;
+  border: 3px solid red;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .arrow-box {
   width: 90%; 
@@ -81,17 +82,20 @@
   height: 0; 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid  pink;
+  border-bottom: 10px solid  red;
   margin: auto,;
 }
 
 #error-text {
-  margin: auto auto auto 2em;
-  font-style: oblique;
+  margin: auto 2em auto 2em;
   color: Red;
   font-weight: bold;
+  padding: 0.05em;
 }
 
+.err-icon {
+  color:red;
+}
 ::placeholder { 
   color: white;
   opacity: 1; /* Firefox */
