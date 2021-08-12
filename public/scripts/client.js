@@ -87,6 +87,8 @@ const renderTweets = function(tweetData) {
   }
 }
 
+
+
 $(document).ready(function() {
 
   loadTweets();
@@ -99,6 +101,10 @@ $(document).ready(function() {
       $.post("/tweets", $( this ).serialize())
       .then((res) => loadTweets());
     };
+  })
+
+  $(".arrow").on("click", () => {
+    $("#tweet-text").focus();
   })
 
 });
