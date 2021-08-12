@@ -126,6 +126,7 @@ $(document).ready(function() {
       }
   });
 
+  //A function to check if tweet area is in view point of a user
   const isInViewport = function() {
     const elementTop = $("#tweet-text").offset().top;
     const elementBottom = elementTop + $("#tweet-text").outerHeight();
@@ -160,9 +161,17 @@ $(document).ready(function() {
     $("#tweet-text").css('caret-color','white')
   }
 
+  // Event lestener for a click on tweet text area
   $("#tweet-text").on('click', ()=> {
    $("#tweet-text").attr('placeholder', '');
    focusHandler();
   })
   
+  // Event listener on a tweet area unfocus:
+  $("#tweet-text").on('focusout', ()=> {
+    if ($("#tweet-text").val() === '' ) {
+      $("#tweet-text").attr('placeholder', 'What are you humming about?');
+    }
+  });
+
 });
