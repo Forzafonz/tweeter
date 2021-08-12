@@ -100,8 +100,12 @@ $(document).ready(function() {
     const tweetText = $(this).children("textarea").val();
     if (checkTweet(tweetText)) {
       $.post("/tweets", $(this).serialize())
-        .then((res) => loadTweets());
-    }
+      .then((res) => loadTweets())
+      .then((res) => {
+        $(this).children("textarea").val('');
+        $(this).children("textarea").attr("placeholder", "What are you humming about?");
+      });
+    };
   });
 
   $(".arrow").on("click", () => {
@@ -126,6 +130,12 @@ $(document).ready(function() {
   });
 
   $("#scroll-to-top").on('click', () => {
+    $("html, body").animate({
+      scrollTop: 0,
+      specialEasing: {
+        width: "linear",
+        height: "easeOutBounce"
+      }}, 'slow');
     $("#tweet-text").focus();
   });
   
