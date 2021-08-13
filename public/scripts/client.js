@@ -78,14 +78,15 @@ const createTweetElement = function(input) {
 };
 
 const renderTweets = function(tweetData) {
-
+  let appendTweets ='';
   // loops through tweets
   for (const tweet of tweetData) {
   // calls createTweetElement for each tweet
     const newTweet = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    $(".tweet-container").append(newTweet);
+    appendTweets = newTweet.concat(appendTweets);
   }
+   // takes return value and appends it to the tweets container
+   $(".tweet-container").append(appendTweets);
 };
 
 
