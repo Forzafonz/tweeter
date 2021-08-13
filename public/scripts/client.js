@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 //A function to check if tweet meets conditions
 
 const checkTweet = function(tweet) {
@@ -27,11 +21,14 @@ const throwError = function(errorMsg) {
   $("#tweet-text").css('border', '2px solid red');
   $(".error").slideDown({complete: () => {
     //Event listener which will hide error if user clicked on textarea
-    $("#tweet-text").on('click', () => {
-      $("#tweet-text").css('border', '');
-      $(".error").slideUp("slow");
-    });
+    $("#tweet-text").on('keyup', () => {
 
+      if ($("textarea").val().length >= 0 && $("textarea").val().length < 141) {
+        $("#tweet-text").css('border', '');
+        $(".error").slideUp("slow");
+
+      }
+    });
   }});
 };
 
@@ -77,6 +74,8 @@ const createTweetElement = function(input) {
 
 };
 
+//A function to create tweets: 
+
 const renderTweets = function(tweetData) {
   let appendTweets ='';
   // loops through tweets
@@ -89,13 +88,13 @@ const renderTweets = function(tweetData) {
    $(".tweet-container").append(appendTweets);
 };
 
-
+//Once document is ready begin listening:
 
 $(document).ready(function() {
 
   loadTweets();
 
-  // "Catch default event handler for submit button, prevent it and replace with a custom one made with Ajax"
+  // "Catch default event handler for submit button, supress it and replace with a custom one made with Ajax"
   $("#tweet-form").submit(function(event) {
     event.preventDefault();
     const tweetText = $(this).children("textarea").val();
@@ -131,9 +130,6 @@ $(document).ready(function() {
   //A function to check if tweet area is in view point of a user
   const isInViewport = function() {
 
-    console.log($("#tweet-form").css('display'))
-    console.log($(".tweet-container").offset().top)
-
     let elementTop = $("#tweet-text").offset().top;
     let elementBottom = elementTop + $("#tweet-text").outerHeight();
 
@@ -143,7 +139,6 @@ $(document).ready(function() {
       elementBottom = $("nav").offset().top + $("nav").outerHeight();
       
     }
-
     const viewportTop = $(window).scrollTop() + $("#tweet-text").outerHeight();
     const viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop && elementTop < viewportBottom;
