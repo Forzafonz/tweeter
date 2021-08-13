@@ -48,7 +48,7 @@
         <i class="fas fa-angle-double-down arrow"></i>
       </div> 
     </nav>
-
+  <!-- User Profile: Pic and Name -->
   <div id = 'main-div'>  
     <header id = "main">
       <div class = "container">
@@ -62,21 +62,23 @@
       </div>
     </header>
   
-    <!-- Page-specific (main) content here -->
+    <!-- Main 'column' of tweeter app which displays a form to enter a new tweet and all posted tweets -->
     <main>
 
       <section class="new-tweet">
         <div class = "tweet-container">
           <form method = "POST" action = "/tweets" id = 'tweet-form'>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <!-- Error element which is hidden and called by jQuery -->
             <div class = 'error'> 
-            <div class ="arrow-box"><div class="arrow-up"></div></div>
-            <div id = "error-message">
-                <i class="fas fa-exclamation-circle err-icon" style = "margin-left: 0.5em;"></i>
-                <div id = "error-text">Error Message</div>
-                <i class="fas fa-exclamation-circle err-icon"></i>
-            </div>
-            </div>
+              <div class ="arrow-box"><div class="arrow-up"></div></div>
+                <div id = "error-message">
+                  <i class="fas fa-exclamation-circle err-icon" style = "margin-left: 0.5em;"></i>
+                  <div id = "error-text">Error Message</div>
+                  <i class="fas fa-exclamation-circle err-icon"></i>
+                </div>
+             </div>
+
             <hr class = "divider">
             <div class = 'control'>
               <button type="submit" class = "tweet-button">Tweet</button>
@@ -88,7 +90,7 @@
       
     </main>
   </div>  
-  
+  <!-- Footer which is used to create a button which scrolls to top -->
     <footer id ="foot1">
       <div id = "scroll-to-top"><i class="fas fa-angle-double-up fa-lg arrow2" ></i></div>
     </footer>
