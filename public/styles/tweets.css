@@ -1,3 +1,5 @@
+/* This CSS file is responsible for tweets styling */
+/* Styling for the main container that contain the tweet itself and its animation */
 .article-tweet {
   display: flex;
   flex-direction: column;
@@ -6,12 +8,7 @@
   margin: 0.2em 5% 0.5em 5%;
   border-radius: 4%;
 }
-
-.article-tweet:hover {
-  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
-  background-color: rgb(255, 255, 255, 0.1);
-}
-
+  /* Styling for tweet text */
 .article-tweet div {
   font-family: Bungee, sans-serif;
   font-size: small;
@@ -20,29 +17,64 @@
   text-align: left;
   margin: 1.5em;
 }
+  /* Styling for tweet animation */
+.article-tweet:hover {
+  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
+  background-color: rgb(255, 255, 255, 0.1);
+}
 
+/* End of styling for the main container that contain the tweet itself and its animation */
+/* Styling for tweet header which contains user pic, name and handle */
 article header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+
+  /* Styling for user pic */
+article img {
+  margin-left: 1em;
+  margin-top: 1em;
+  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
+  background-color: azure;
+}
+  /* Styling for user name */
+#user-name {
+  color: orange;
+  font-size: 2em;
+  text-decoration: underline;
+  margin: auto 1em;
+}
+/* Styling for handle */
 #handle {
   color: silver;
   display: flex;
   align-items: center;
 }
+/*End of Styling for tweet header which contains user pic, name and handle */
 
-footer {
+
+/* Styling for main tweet text */
+header div{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
 }
 
+/* Styling for a divider which separate the main tweet text from its footer */
 .divider2 {
   width: 99%;
   height: 0.05em;
   background-color: azure;
   margin: 0 auto;
+}
+
+/* Styling for a footer which contains time of tweeter post as well as icons */
+
+footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 #icons {
@@ -52,27 +84,8 @@ footer {
   justify-content: space-between;
 }
 
-article img {
-  margin-left: 1em;
-  margin-top: 1em;
-  box-shadow: 12px 12px 20px rgb(255, 253, 253, 0.15), 0 6px 6px rgba(252, 252, 252, 0.35);
-  background-color: azure;
-}
-
-#user-name {
-  color: orange;
-  font-size: 2em;
-  text-decoration: underline;
-  margin: auto 1em;
-}
-
-header div{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .i1:hover , .i2:hover, .i3:hover,  #handle:hover {
   color: orange;
 }
 
+/* End of Styling for a footer which contains time of tweeter post as well as icons */

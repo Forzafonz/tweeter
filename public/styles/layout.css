@@ -10,10 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
+/* Style for the main body of html document */
 body {
   background-color: #402300;
   background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
@@ -21,6 +18,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Style for the main section of html document */
 main {
   background-color: transparent;
   width: 90%;
@@ -31,6 +29,7 @@ main {
   margin: 15vh 5% 0% 5%;
 }
 
+/* Style for element which contains two main containers: profile container and pics container */
 #main-div {
   background-color: transparent;
   display:flex;
@@ -38,29 +37,11 @@ main {
   margin: 7vh 3vh;
 }
 
-@media screen and (max-width:900px) {
-  #main-div {
-    flex-direction: column;
-  }
-  main {
-    margin: 0vh 5% 0% 5%;
-  }
-
-  
-}
-
-#main-name {
-  background-color: rgb(228, 208, 178, 0.3);
-  border-radius: 5%;
-  color: whitesmoke;
-  padding:0.2em 3em;
-  box-shadow: 0 0 5px 10px rgb(65,36,0, 0.6),  0 0 15px 25px rgb(65,36,0, 0.25);
-}
-
 p {
   color: white;
 }
 
+/* Styling for the button responsible for scrolling to top */
 #scroll-to-top {
   position: fixed;
   bottom:5em;
@@ -86,16 +67,18 @@ p {
   box-shadow: 0px 0px 20px 5px rgb(255, 253, 253, 0.15), 0 0px 6px 5px rgba(252, 252, 252, 0.35);
 }
 
-.arrow2 {
-  transform: rotate(180);
-}
+/*End of styling for a button responsible for scrolling to top */
 
 #foot1 {
   display: flex;
   justify-content: flex-end;
 }
 
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media screen and (max-width:768px) {
+  #main-div {
+    flex-direction: column;
+  }
+  main {
+    margin: 0vh 5% 0% 5%;
+  }
+}

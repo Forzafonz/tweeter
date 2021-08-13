@@ -1,3 +1,5 @@
+/* Styling for a div element container which 'contains' main user phot and name */
+
 .container {
   position: relative;
   height: auto;
@@ -9,9 +11,20 @@
   background-color: transparent;
 }
 
+#main-name {
+  background-color: rgb(228, 208, 178, 0.3);
+  border-radius: 5%;
+  color: whitesmoke;
+  padding:0.2em 3em;
+  box-shadow: 0 0 5px 10px rgb(65,36,0, 0.6),  0 0 15px 25px rgb(65,36,0, 0.25);
+}
+
 #main{
   margin: 9em 1em;
 }
+
+/* End of styling for a div element container which 'contains' main user phot and name */ 
+/* Decrease margin at top and the bottom to 3em when screen width is less than 768px */
 
 @media screen and (max-width:768px) {
   #main{

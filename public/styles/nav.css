@@ -1,3 +1,5 @@
+/* Style for the headar nav panel */
+
 nav {
   position: absolute;
   top:0;
@@ -16,6 +18,8 @@ nav {
   min-height: 70px;
 }
 
+/* ----Styling for the right side of a navigation bar---- */
+
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -28,16 +32,14 @@ nav span {
   font-size: 2em;
 }
 
-.arrow {
-  color: red;
-  position:relative;
-  animation-name: arrow-down;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-.arrow:hover {
-  cursor: pointer;
+/* ----End of Styling for the right side of a navigation bar---- */
+/* ----Styling for left side of nav bar ---- */
+.nav-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  height: auto;
+  max-width: 20vw;
 }
 
 .logo {
@@ -62,20 +64,26 @@ nav span {
   align-items: center;
 }
 
-.nav-wrap {
-  display: flex;
-  flex-direction: row;
-  width: 30vw;
-  height: auto;
-  max-width: 20vw;
+/* ---- End of Styling for left side of nav bar ---- */
+/* ---- Styling for arrow in the nav bar and its animation ----  */
+
+.arrow {
+  color: red;
+  position:relative;
+  animation-name: arrow-down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }
 
 .arrow:hover {
   color: yellow;
 }
 
-
-
+    /* Animation for arrow */
 @keyframes arrow-down{
   0% {
     color: red;
@@ -92,3 +100,5 @@ nav span {
     top: 0em;
   }
 }
+
+/* ----End of Styling for arrow and its animation ----  */

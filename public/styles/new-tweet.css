@@ -1,3 +1,5 @@
+/* Styling of the main tweet container element which hosts a form to enter a new tweet as well as posted tweets */
+
 .tweet-container{
   background-color: #062280;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
@@ -9,6 +11,33 @@
   padding: 1em 0 0 0;
   border-radius: 0.3em;
   box-shadow: 0 0 5px 10px rgb(65,36,0, 0.6),  0 0 15px 25px rgb(65,36,0, 0.25);
+}
+  /* A style for devider line */
+.divider {
+  width: 90%;
+  height: 0.2em;
+  background-color: azure;
+  margin: 0 auto;
+}
+  /* A style for symbols counter */
+#text {
+  font-family: Bungee, sans-serif;
+  color: azure;
+  align-self: center;
+}
+
+#tweet-form {
+  width: 100%;
+  display:none;
+}
+
+/* Styling for tweet submission button and a change to styling if hover mouse */
+  /* Style of container where the button is nested - to center and align the button. */
+.control {
+  margin:auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweet-button{
@@ -22,6 +51,9 @@
   background-color:rgb(233, 194, 122);
   font-family: Bungee, sans-serif;
 }
+/*End of  Styling for tweet submission button and a change to styling if hover mouse */
+
+/* Styling for tweet text window which is used to enter text of new tweets and a change to styling if hover mouse */
 
 #tweet-text {
   background-color: orange;
@@ -41,36 +73,21 @@
 #tweet-text:hover {
   box-shadow: 0px 0px 0.4em 0.8em rgb(255, 253, 253, 0.15), 0 0 0.2em 0.2em rgba(252, 252, 252, 0.35);
 }
-
-#tweet-form {
-  width: 100%;
-  display:none;
+  /* Change color of placeholder text to white */
+::placeholder { 
+  color: white;
+  opacity: 1; 
 }
 
-.control {
-  margin:auto;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
+/*End of Styling for tweet text window which is used to enter text of new tweets and a change to styling if hover mouse */
+/* Styling for a hidden error form which appears only if a tweet does not meet set requirements */
 
-#text {
-  font-family: Bungee, sans-serif;
-  color: azure;
-  align-self: center;
-}
-
-.divider {
-  width: 90%;
-  height: 0.2em;
-  background-color: azure;
-  margin: 0 auto;
-}
+  /* Main error container to control when error is hidden */
 .error {
   margin: -0.2em auto auto auto;
   display: none;
 }
-
+  /* Error itself */
 #error-message {
   width: 90%;
   height: auto;
@@ -106,7 +123,8 @@
 .err-icon {
   color:red;
 }
-::placeholder { 
-  color: white;
-  opacity: 1; /* Firefox */
-}
+
+/* End of Styling for a hidden error form which appears only if a tweet does not meet set requirements */
+
+
+
