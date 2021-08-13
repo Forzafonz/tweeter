@@ -128,15 +128,27 @@ $(document).ready(function() {
 
   //A function to check if tweet area is in view point of a user
   const isInViewport = function() {
-    const elementTop = $("#tweet-text").offset().top;
-    const elementBottom = elementTop + $("#tweet-text").outerHeight();
+
+    console.log($("#tweet-form").css('display'))
+    console.log($(".tweet-container").offset().top)
+
+    let elementTop = $("#tweet-text").offset().top;
+    let elementBottom = elementTop + $("#tweet-text").outerHeight();
+
+    if ($("#tweet-form").css('display') === 'none') {
+    
+      elementTop = $("nav").offset().top + $("nav").outerHeight();
+      elementBottom = $("nav").offset().top + $("nav").outerHeight();
+      
+    }
+
     const viewportTop = $(window).scrollTop() + $("#tweet-text").outerHeight();
     const viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
+// An event listener on to display/hide button for scorrling to top
   $(window).on('scroll', () => {
-    console.log(!isInViewport());
     if (!isInViewport()) {
       $("#scroll-to-top").css('display', 'flex');
     } else {

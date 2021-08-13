@@ -62,7 +62,9 @@ nav span {
 .nav-wrap {
   display: flex;
   flex-direction: row;
-  width: 30%;
+  width: 30vw;
+  height: auto;
+  max-width: 20vw;
 }
 
 .arrow:hover {
