@@ -104,7 +104,8 @@ $(document).ready(function() {
       .then((res) => loadTweets())
       .then((res) => {
         $(this).children("textarea").val('');
-        $(this).children("textarea").attr("placeholder", "What are you humming about?");
+        $(this).children("textarea").attr("placeholder", "What are you humming about?")
+        $(this).children(".control").children("#text").val('140');
       });
     };
   });
