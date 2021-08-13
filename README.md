@@ -14,8 +14,8 @@ Tweeter is a simple, single-page Twitter clone. It has the following features:
 
 * `Node.js`
 * `Express`
-* `Ajax`
-* `JQuery`
+* `CSS`
+* `JQuery` - `Ajax`
 * `Chance`
 * `Body Parser`
 * `Font Awesome` (for incons)
