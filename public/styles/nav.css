@@ -13,6 +13,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 1em 2em rgb(65,36,0, 0.6);
+  min-height: 70px;
 }
 
 .new-tweet {
@@ -20,6 +21,7 @@ nav {
   flex-direction: column;
   align-items: center;
   align-content: center;
+  min-width: 150px;
 }
 
 nav span {
@@ -46,6 +48,7 @@ nav span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 250px;
 }
 
 #main-logo {
@@ -70,6 +73,8 @@ nav span {
 .arrow:hover {
   color: yellow;
 }
+
+
 
 @keyframes arrow-down{
   0% {

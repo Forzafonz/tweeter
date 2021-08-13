@@ -1,4 +1,3 @@
-
 .container {
   position: relative;
   height: auto;
@@ -12,4 +11,10 @@
 
 #main{
   margin: 9em 1em;
+}
+
+@media screen and (max-width:768px) {
+  #main{
+    margin: 3em 1em;
+  }
 }

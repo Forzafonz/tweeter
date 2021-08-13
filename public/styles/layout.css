@@ -38,6 +38,17 @@ main {
   margin: 7vh 3vh;
 }
 
+@media screen and (max-width:900px) {
+  #main-div {
+    flex-direction: column;
+  }
+  main {
+    margin: 0vh 5% 0% 5%;
+  }
+
+  
+}
+
 #main-name {
   background-color: rgb(228, 208, 178, 0.3);
   border-radius: 5%;
