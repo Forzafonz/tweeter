@@ -43,7 +43,8 @@ const convertToNonXSS = function(tweet) {
 // A function to load all existing tweets from the database
 const loadTweets = function() {
   $(".article-tweet").remove();
-  $.get('/tweets').then((tweets) => renderTweets(tweets));
+  $.get('/tweets')
+  .then((tweets) => renderTweets(tweets));
 };
 
 const createTweetElement = function(input) {
@@ -74,6 +75,7 @@ const createTweetElement = function(input) {
 
 };
 
+
 //A function to create tweets: 
 
 const renderTweets = function(tweetData) {
@@ -100,7 +102,13 @@ $(document).ready(function() {
     const tweetText = $(this).children("textarea").val();
     if (checkTweet(tweetText)) {
       $.post("/tweets", $(this).serialize())
-      .then((res) => loadTweets())
+      .then((res) =>  {
+        $.get('/tweets')
+        .then((tweets) => {
+          console.log($(".tweet-container").children(':eq(1)'))
+          $(".tweet-container").children(':eq(1)').before(createTweetElement(tweets[tweets.length - 1]));
+        });
+      })
       .then((res) => {
         $(this).children("textarea").val('');
         $(this).children("textarea").attr("placeholder", "What are you humming about?")
